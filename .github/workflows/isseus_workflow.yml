@@ -1,6 +1,7 @@
 name: issues_workflow
-on: issues:
-  types: [opened] 
+on:
+  issues:
+    types: [opened]
 jobs:
   issues_job:
     runs-on: ubuntu-latest
