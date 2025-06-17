@@ -1,0 +1,28 @@
+name: issues_workflow
+on: issues:
+  types: [opened] 
+jobs:
+  issues_job:
+    runs-on: ubuntu-latest
+    steps:
+      # - name: Checkout code
+      #   uses: actions/checkout@v3
+
+      # - name: Set up node.js
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '18'
+
+      # - name: Install dependencies
+      #   run: npm install
+
+      # - name: Run issues script
+      #   run: npm run issues
+      - name: Retrieve issue details
+        run: |
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
+          echo "Issue Number: ${{ github.event.issue.number }}"
+          echo "Issue State: ${{ github.event.issue.state }}"
+        # Replace the above line with your actual script command, e.g., npm run issues
+        # Ensure that the script is defined in your package.json file
