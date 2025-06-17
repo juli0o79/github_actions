@@ -1,5 +1,5 @@
 name: test and deploy
-on: push
+on: [push, repository_dispath]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -23,7 +23,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     neeeds: test
-    if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
