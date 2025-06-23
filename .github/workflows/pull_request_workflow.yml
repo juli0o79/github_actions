@@ -1,7 +1,7 @@
 name: pr_worklow
 on:
   pull_request:
-  types: [opened, synchronize, reopened, closed]
+  types: [opened, closed]
 jobs:
   pr_job:
     runs-on: ubuntu-latest
